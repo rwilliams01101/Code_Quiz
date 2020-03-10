@@ -17,9 +17,17 @@ body {
 .title {
 	padding-top:20px;
 	text-align: center;
-	font-size: 36px;
-	text-transform: uppercase;
-    color: whitesmoke;
+	font-size: 60px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: red;
+}
+
+.tagline {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: initial;
+    padding-bottom: 20px;
 }
 
 #startBtn {
@@ -33,6 +41,22 @@ body {
 
 #startBtn:hover {
     background-color: gray;
+    color: red;
+}
+
+#nextBtn {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgb(70, 121, 155);
+    height: 30px;
+    width: 180px;
+    margin-top: 15px;
+}
+
+#nextBtn:hover {
+    background-color: gray;
+    color: red;
 }
 
 #timer {
@@ -41,6 +65,7 @@ body {
     margin: 0 auto;
     color: white;
     font-size: x-large;
+    padding-top: 10px;
 }
 
 .question {
