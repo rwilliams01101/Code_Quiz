@@ -1,43 +1,25 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Quiz</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" type="text/css">
-  </head>
-  <body>
-      <h1>Test Your Knowledge of Something!!</h1>
-      <hr>
-      
-      <h3 id="highscores" style="position:fixed; margin-left:40px;">View High Scores</h3>
-      <button class="btn btn-primary" id="startBtn">Start Quiz!</button>
-      <h3 id="timer" style="float:auto;">Click Button To Start Timer</h3>
-      <br>
-      <div class="card" style="width: 75%;">
-        <div class="card-body">
-          <h5 class="card-title" id="topic">Here's the topic of what the quiz is</h5>
-          <p class="card-text" id="question">Here is the question.</p>
-          <a class="btn btn-secondary" id="btnA">Answer A</a>
-          <a class="btn btn-secondary" id="btnB">Answer B</a>
-          <div>
-          <a class="btn btn-secondary" id="btnC">Answer C</a>
-          <a class="btn btn-secondary" id="btnD">Answer D</a>
-          </div>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quiz | Metal Gear Solid</title>
+		
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="quizContainer" class="container">
+      <div class="title">Metal Gear Solid Quiz</div>
+      <button id="startBtn">Start Quiz!</button>
+        <div id="timer">You have 100 Seconds to Complete</div>
+				<div id="question" class="question"></div>
+					<button class ="option"><input type="radio" name="option" value="1" /><span id="opt1"></span></button>
+					<button class ="option"><input type="radio" name="option" value="2" /><span id="opt2"></span></button>
+					<button class ="option"><input type="radio" name="option" value="3" /><span id="opt3"></span></button>
+					<button class ="option"><input type="radio" name="option" value="4" /><span id="opt4"></span></button>
+					<button id="nextButton" class="next-btn" onclick="loadNextQuestion();">Submit Answer</button>
+				</div>
+				<div id="result" class="container result" style="display:none;">
         </div>
-      </div>
-      <br>
-      <div>
-        <p id="ansFeedback"></p>
-      </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+        <script src="questions.js"></script>
+        <script src="quizscript.js"></script>
+	</body>
 </html>
