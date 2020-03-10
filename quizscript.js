@@ -20,14 +20,20 @@ function timerStart() {
     var interval = setInterval(function () {
         document.getElementById('timer').innerHTML = "Time Remaining: " + timer + " seconds";
         timer--;
+        console.log("Total" + totQuestions)
         // not sure why, but there is a 2 second lag between when the alert is fired and when the timer hits 0 seconds
         // the -2 corrects this lag
+        if (totQuestions === 5) {
+            clearInterval(interval);
+            return;
+        }
         if (timer === -2) {
             clearInterval(interval);
             document.getElementById('timer').innerHTML = 'Retry?';
             // or...
             alert("Snake, what's your status? Snake? Snaaaaaaaaaaake!!!");
         }
+
     }, 1000);
 }   
 
@@ -59,6 +65,7 @@ function loadNextQuestion () {
         container.style.display = 'none';
         resultCont.style.display = '';
         resultCont.textContent = 'Total Score: ' + score;
+
         return;
     }
     loadQuestion(currentQuestion);
