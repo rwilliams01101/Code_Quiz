@@ -13,7 +13,6 @@ body {
     font-size: x-large;
 }
 
-
 .title {
 	padding-top:20px;
 	text-align: center;
@@ -86,4 +85,8 @@ body {
 	margin: 10px 0 10px 10px;
 	color: black;
     border-radius: 20px
+}
+
+#result {
+    font-size: 175px;
 }

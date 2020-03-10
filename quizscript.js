@@ -15,11 +15,14 @@ var startBtn = document.querySelector("#startBtn");
 
 
 function timerStart() {
-    var timer = 100;
+    loadQuestion(currentQuestion);
+    var timer = 15;
     var interval = setInterval(function () {
         document.getElementById('timer').innerHTML = "Time Remaining: " + timer + " seconds";
         timer--;
-        if (timer === 0) {
+        // not sure why, but there is a 2 second lag between when the alert is fired and when the timer hits 0 seconds
+        // the -2 corrects this lag
+        if (timer === -2) {
             clearInterval(interval);
             document.getElementById('timer').innerHTML = 'Retry?';
             // or...
@@ -55,13 +58,13 @@ function loadNextQuestion () {
     if(currentQuestion  == totQuestions) {
         container.style.display = 'none';
         resultCont.style.display = '';
-        resultCont.textContent = 'Your Score: ' + score;
+        resultCont.textContent = 'Total Score: ' + score;
         return;
     }
     loadQuestion(currentQuestion);
 }
 
-loadQuestion(currentQuestion);
+// loadQuestion(currentQuestion);
 
 // Event Listener should start timer and TODO: make questions populate
 startBtn.addEventListener("click", timerStart)
