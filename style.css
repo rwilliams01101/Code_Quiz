@@ -94,3 +94,10 @@ body {
 #confirmAns {
     padding-top: 10px;
 }
+
+.highScores {
+    font-size: 25px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: initial;
+}

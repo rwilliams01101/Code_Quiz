@@ -1,9 +1,23 @@
+/*
+T  A  C  T  I  C  A  L        E  S  P  I  O  N  A  G  E       A  C  T  I  O  N
+ _    _  ___ _____  _    _    ___   ___    _    ____    __    __   _   _  ___
+| \  / ||  _|_   _|/ \  | |  / _ \ |  _|  / \  |  _ \  /  \  /  \ | | | ||   \
+|  \/  || |   | | / _ \ | | | / \_|| |   / A \ | | | || |\_|| /\ || | | || |\ |
+| \  / || |_  | || |_| || | | | __ | |_ | /_\ || |_| | \ \  | || || | | || || |
+| |\/| ||  _| | ||  _  || | | ||_ ||  _||  _  ||  _ <   \ \ | || || | | || || |
+| |  | || |   | || | | || | | | | || |  | | | || | | | _ \ \| || || | | || || |
+| |  | || |_  | || | | || |_| \_/ || |_ | | | || | | || \| || \/ || |_| || |/ |
+|_|  |_||___| |_||_| |_||___|\__,_||___||_| |_||_| \_\ \__/  \__/ |___|_||___/
+*/
+
+
 // set variables for current question and score to 0. Will increment up from there.
 var currentQuestion = 0;
 var score = 0;
 var timer = 60;
 
 // declare all the variables!!! or at least a lot of them
+var playerInitials = "";
 var container = document.getElementById('quizContainer');
 var questionEl = document.getElementById('question');
 var opt1 = document.getElementById('opt1');
@@ -15,6 +29,9 @@ var nextButton = document.getElementById('nextBtn');
 var resultCont = document.getElementById('result');
 var startBtn = document.querySelector('#startBtn');
 var confirmAns = document.querySelector('#confirmAns');
+var highScores = document.querySelector('.highScores');
+// This would have returned back to the main screen from the High Scores view, ran out of time
+var returnToGame = document.querySelector('#returnToGame');
 
 // timerStart fires loadQuestion and timer
 function timerStart() {
@@ -27,8 +44,8 @@ function timerStart() {
         // the -1 corrects this lag 
         if (timer < -1) {
             clearInterval(interval);
-            // if time expires timer stops and timer countdown clears to show "Retry?
-            document.getElementById('timer').innerHTML = 'Retry?';
+            // if time expires timer stops and timer countdown clears to show reload
+            document.getElementById('timer').innerHTML = 'Reload Page to Retry.';
             return;
         }
 
@@ -78,11 +95,29 @@ function loadNextQuestion() {
         container.style.display = 'none';
         resultCont.style.display = '';
         resultCont.textContent = 'Total Score: ' + score;
+        playerInitials = prompt('High Score!!! Enter your initials')
+        // this saves the highscorer intials on local storage
+        window.localStorage.setItem('highscorer', playerInitials);
+        window.localStorage.setItem('scores', score);
         return;
     }
+
 
     loadQuestion(currentQuestion);
 }
 
+function leaderBoard () {
+    container.style.display = 'none';
+    resultCont.style.display = '';
+    // this recalls the highscorer initials from local storage
+    var playerHigh = localStorage.getItem('highscorer')
+    var scores = localStorage.getItem('scores')
+    // this makes the highscorer information visible when "High Score" is clicked
+    highScores.textContent = ("High Scoring Player: "+ playerHigh + "  Score: " + scores);
+}
+
+
+
 // Event Listener should listen for startBtn click
 startBtn.addEventListener('click', timerStart)
+highScores.addEventListener('click', leaderBoard)
