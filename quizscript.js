@@ -1,8 +1,9 @@
 // set variables for current question and score to 0. Will increment up from there.
 var currentQuestion = 0;
 var score = 0;
-var timer = 15;
+var timer = 60;
 
+// declare all the variables!!! or at least a lot of them
 var container = document.getElementById('quizContainer');
 var questionEl = document.getElementById('question');
 var opt1 = document.getElementById('opt1');
@@ -15,7 +16,6 @@ var resultCont = document.getElementById('result');
 var startBtn = document.querySelector('#startBtn');
 var confirmAns = document.querySelector('#confirmAns');
 
-
 // timerStart fires loadQuestion and timer
 function timerStart() {
     loadQuestion(currentQuestion);
@@ -27,6 +27,7 @@ function timerStart() {
         // the -1 corrects this lag 
         if (timer < -1) {
             clearInterval(interval);
+            // if time expires timer stops and timer countdown clears to show "Retry?
             document.getElementById('timer').innerHTML = 'Retry?';
             return;
         }
@@ -34,6 +35,7 @@ function timerStart() {
     }, 1000);
 }
 
+// references ids and replaces text with questions, answers from array
 function loadQuestion(questionIndex) {
     var q = questions[questionIndex];
     questionEl.textContent = (questionIndex + 1) + '. ' + q.question;
@@ -43,6 +45,8 @@ function loadQuestion(questionIndex) {
     opt4.textContent = q.option4;
 };
 
+// when nextBtn is clicked an alert is shown if no answer is selected
+// otherwise it checks the answer and returns "correct" or "incorrect"
 function loadNextQuestion() {
     var selectedOption = document.querySelector('input[type=radio]:checked')
     if (!selectedOption) {
@@ -60,13 +64,16 @@ function loadNextQuestion() {
         timer = timer - 5
     }
 
+    // this advances to the next question/answer array
     selectedOption.checked = false;
     currentQuestion++;
 
+    // if only one question remains, the nextBtn shows "Finish"
     if (currentQuestion == totQuestions - 1) {
         nextButton.textContent = 'Finish';
     }
 
+    // if no questions remain, the total score is shown
     if (currentQuestion == totQuestions) {
         container.style.display = 'none';
         resultCont.style.display = '';
