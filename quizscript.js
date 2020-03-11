@@ -25,7 +25,7 @@ function timerStart() {
         timer--;
         // not sure why, but there is a 1 second lag between when the alert is fired and when the timer hits 0 seconds
         // the -1 corrects this lag 
-        if (timer === -1) {
+        if (timer < -1) {
             clearInterval(interval);
             document.getElementById('timer').innerHTML = 'Retry?';
             return;
@@ -53,7 +53,7 @@ function loadNextQuestion() {
     var answer = selectedOption.value;
     if (questions[currentQuestion].answer == answer) {
         score += 5
-        confirmAns.textContent = 'Corrent'
+        confirmAns.textContent = 'Correct'
     } else {
         (questions[currentQuestion].answer != answer)
         confirmAns.textContent = 'Incorrect'

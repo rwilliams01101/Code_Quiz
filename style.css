@@ -90,3 +90,7 @@ body {
 #result {
     font-size: 175px;
 }
+
+#confirmAns {
+    padding-top: 10px;
+}
