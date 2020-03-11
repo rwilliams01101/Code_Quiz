@@ -2,7 +2,7 @@ body {
     background-image: url("https://www.psu.com/wp/wp-content/uploads/2019/05/MetalGearSolidRemakeDreams.jpg");
 }
 
-/* move to right to account for image above. TODO: Might need to chage "high score" display */
+/* move to right to account for image above. */
 .container {
 	width: 65%;
 	position: fixed;

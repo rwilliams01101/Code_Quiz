@@ -12,26 +12,22 @@ var totQuestions = questions.length;
 var nextButton = document.getElementById('nextBtn');
 var resultCont = document.getElementById('result');
 var startBtn = document.querySelector("#startBtn");
+var confirmAns = document.querySelector("#confirmAns");
 
 
+// timerStart fires loadQuestion and timer
 function timerStart() {
     loadQuestion(currentQuestion);
     var timer = 15;
     var interval = setInterval(function () {
         document.getElementById('timer').innerHTML = "Time Remaining: " + timer + " seconds";
         timer--;
-        console.log("Total" + totQuestions)
-        // not sure why, but there is a 2 second lag between when the alert is fired and when the timer hits 0 seconds
-        // the -2 corrects this lag
-        if (totQuestions === 5) {
-            clearInterval(interval);
-            return;
-        }
-        if (timer === -2) {
+        // not sure why, but there is a 1 second lag between when the alert is fired and when the timer hits 0 seconds
+        // the -1 corrects this lag 
+        if (timer === -1) {
             clearInterval(interval);
             document.getElementById('timer').innerHTML = 'Retry?';
-            // or...
-            alert("Snake, what's your status? Snake? Snaaaaaaaaaaake!!!");
+            return;
         }
 
     }, 1000);
@@ -45,6 +41,7 @@ function loadQuestion (questionIndex) {
     opt3.textContent = q.option3;
     opt4.textContent = q.option4;
 };
+
 function loadNextQuestion () {
     var selectedOption = document.querySelector('input[type=radio]:checked')
     if(!selectedOption) {
@@ -54,10 +51,18 @@ function loadNextQuestion () {
 
     var answer = selectedOption.value;
     if (questions[currentQuestion].answer == answer) {
-        score += 5;
+        score += 5
+        confirmAns.textContent = 'Corrent'
+    } else { (questions[currentQuestion].answer != answer) 
+        confirmAns.textContent = 'Incorrect'
+        timer = timer-5
     }
     selectedOption.checked = false;
     currentQuestion++;
+    // if (questions[currentQuestion].answer != answer) {
+    //     timer = timer -5;
+    //     confirmAns.textContent = 'Wrong!'
+    // }
     if(currentQuestion == totQuestions -1) {
         nextButton.textContent = 'Finish';
     }
@@ -65,7 +70,6 @@ function loadNextQuestion () {
         container.style.display = 'none';
         resultCont.style.display = '';
         resultCont.textContent = 'Total Score: ' + score;
-
         return;
     }
     loadQuestion(currentQuestion);
@@ -73,5 +77,6 @@ function loadNextQuestion () {
 
 // loadQuestion(currentQuestion);
 
-// Event Listener should start timer and TODO: make questions populate
+
+// Event Listener should start timer
 startBtn.addEventListener("click", timerStart)
