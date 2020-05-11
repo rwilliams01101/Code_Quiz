@@ -2,15 +2,15 @@
 <html>
 	<head>
 		<title>Quiz | Metal Gear Solid</title>
-		<link href="style.css" rel="stylesheet">
+		<link href="./assets/css/style.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class ="highScores" id ="returnToGame">High Scores</div>
 		<div id="quizContainer" class="container">
-      <div class="title">Metal Gear Solid</div>
-      <div class="tagline">Tactical Espionage Action</div>
-      <button id="startBtn">Start Quiz!</button>
-        <div id="timer">You have 60 Seconds to Complete</div>
+			<div class="title">Metal Gear Solid</div>
+			<div class="tagline">Tactical Espionage Action</div>
+			<button id="startBtn">Start Quiz!</button>
+				<div id="timer">You have 60 Seconds to Complete</div>
 				<div id="question" class="question"></div>
 					<button class ="option"><input type="radio" name="option" value="1" /><span id="opt1"></span></button>
 					<button class ="option"><input type="radio" name="option" value="2" /><span id="opt2"></span></button>
@@ -18,10 +18,10 @@
 					<button class ="option"><input type="radio" name="option" value="4" /><span id="opt4"></span></button>
 					<button id="nextBtn" class="next-btn" onclick="loadNextQuestion();">Submit Answer</button>
 					<div id="confirmAns"></div>	
-				</div>
-				<div id="result" class="container result" style="display:none;">
-        </div>
-        <script src="questions.js"></script>
-        <script src="quizscript.js"></script>
+		</div>
+		<div id="result" class="container result" style="display:none;">
+		</div>
+        <script src="./assets/js/questions.js"></script>
+        <script src="./assets/js/quizscript.js"></script>
 	</body>
 </html>

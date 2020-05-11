@@ -14,7 +14,7 @@ T  A  C  T  I  C  A  L        E  S  P  I  O  N  A  G  E       A  C  T  I  O  N
 // set variables for current question and score to 0. Will increment up from there.
 var currentQuestion = 0;
 var score = 0;
-var timer = 60;
+var timer = 3;
 
 // declare all the variables!!! or at least a lot of them
 var playerInitials = "";
@@ -45,7 +45,12 @@ function timerStart() {
         if (timer < -1) {
             clearInterval(interval);
             // if time expires timer stops and timer countdown clears to show reload
-            document.getElementById('timer').innerHTML = 'Reload Page to Retry.';
+            document.getElementById('startBtn').innerHTML = 'Retry?';
+            document.getElementById('timer').innerHTML = '';
+            // document.getElementById('quizContainer').style.display = 'none';
+            document.getElementById('nextBtn').style.display = 'none';
+            document.getElementById('startBtn').onclick = "/index.html";
+
             return;
         }
 
