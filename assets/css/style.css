@@ -38,6 +38,15 @@ body {
     width: 90px;
 }
 
+#retryBtn {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgb(70, 121, 155);
+    height: 50px;
+    width: 90px;
+}
+
 #startBtn:hover {
     background-color: gray;
     color: red;

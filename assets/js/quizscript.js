@@ -33,23 +33,24 @@ var highScores = document.querySelector('.highScores');
 // This would have returned back to the main screen from the High Scores view, ran out of time
 var returnToGame = document.querySelector('#returnToGame');
 
+// if time expires, user can retry
+function retry() {
+    window.location.reload();
+}
+
 // timerStart fires loadQuestion and timer
 function timerStart() {
     loadQuestion(currentQuestion);
-    // var timer = 15;
     var interval = setInterval(function () {
         document.getElementById('timer').innerHTML = 'Time Remaining: ' + timer + ' seconds';
         timer--;
-        // not sure why, but there is a 1 second lag between when the alert is fired and when the timer hits 0 seconds
-        // the -1 corrects this lag 
         if (timer < -1) {
             clearInterval(interval);
             // if time expires timer stops and timer countdown clears to show reload
-            document.getElementById('startBtn').innerHTML = 'Retry?';
+            document.getElementById('startBtn').style.display = 'none';
+            document.getElementById('retryBtn').style.display = '';
             document.getElementById('timer').innerHTML = '';
-            // document.getElementById('quizContainer').style.display = 'none';
             document.getElementById('nextBtn').style.display = 'none';
-            document.getElementById('startBtn').onclick = "/index.html";
 
             return;
         }
