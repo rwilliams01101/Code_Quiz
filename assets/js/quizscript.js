@@ -14,7 +14,7 @@ T  A  C  T  I  C  A  L        E  S  P  I  O  N  A  G  E       A  C  T  I  O  N
 // set variables for current question and score to 0. Will increment up from there.
 var currentQuestion = 0;
 var score = 0;
-var timer = 3;
+var timer = 60;
 
 // declare all the variables!!! or at least a lot of them
 var playerInitials = "";
@@ -29,9 +29,6 @@ var nextButton = document.getElementById('nextBtn');
 var resultCont = document.getElementById('result');
 var startBtn = document.querySelector('#startBtn');
 var confirmAns = document.querySelector('#confirmAns');
-var highScores = document.querySelector('.highScores');
-// This would have returned back to the main screen from the High Scores view, ran out of time
-var returnToGame = document.querySelector('#returnToGame');
 
 // if time expires, user can retry
 function retry() {
@@ -112,18 +109,6 @@ function loadNextQuestion() {
     loadQuestion(currentQuestion);
 }
 
-function leaderBoard () {
-    container.style.display = 'none';
-    resultCont.style.display = '';
-    // this recalls the highscorer initials from local storage
-    var playerHigh = localStorage.getItem('highscorer')
-    var scores = localStorage.getItem('scores')
-    // this makes the highscorer information visible when "High Score" is clicked
-    highScores.textContent = ("High Scoring Player: "+ playerHigh + "  Score: " + scores);
-}
-
-
-
 // Event Listener should listen for startBtn click
 startBtn.addEventListener('click', timerStart)
-highScores.addEventListener('click', leaderBoard)
+highScores.addEventListener('click', highScoreList)
