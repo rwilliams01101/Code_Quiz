@@ -1,5 +1,6 @@
 body {
     background-image: url("https://www.psu.com/wp/wp-content/uploads/2019/05/MetalGearSolidRemakeDreams.jpg");
+    background-size: cover;
 }
 
 /* move to right to account for image above. */
