@@ -36,4 +36,39 @@ var questions = [{
 	"option3": "Frank Jaeger",
 	"option4": "Frank Sinatra",
 	"answer": 3
+}, {
+	"question": "What item must you wear to have infinite ammunition?",
+	"option1": "Crocodile Hat",
+	"option2": "Bandana",
+	"option3": "Cheetah Fatigues",
+	"option4": "Cardboard Box",
+	"answer": 2
+}, {
+	"question": "How does Vulcan Raven die?",
+	"option1": "He steps on a Claymore mine",
+	"option2": "He is eaten alive by ravens",
+	"option3": "His car loses traction on a banana peel and goes off a cliff",
+	"option4": "He falls down an elevator shaft",
+	"answer": 2
+}, {
+	"question": "What affects the shape of the PAL card?",
+	"option1": "Temperature",
+	"option2": "Electrical impulse",
+	"option3": "Saturation level",
+	"option4": "Light intensity",
+	"answer": 1
+}, {
+	"question": "How do you acquire the Stealth item?",
+	"option1": "Survive electrocution",
+	"option2": "Beat Revolver Ocelot with hand-to-hand combat",
+	"option3": "Beat the entire game without using a ration",
+	"option4": "Submit during electrocution",
+	"answer": 4
+}, {
+	"question": "What is the name of the largest weapon that Snake fights against in MGS1?",
+	"option1": "Metal Gear REX",
+	"option2": "Metal Gear RAY",
+	"option3": "Arsenal Gear",
+	"option4": "Shagohod",
+	"answer": 1
 }]	
