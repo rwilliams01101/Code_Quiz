@@ -4,7 +4,7 @@ The CryptoTracking Team has one focus - we want to have all the cryptocurrency d
 
 ## Deployment
 
-Metal Gear Solid Quiz is deployed and available for use at https://github.com/rwilliams01101/Code_Quiz.
+Metal Gear Solid Quiz is deployed and available for use at https://rwilliams01101.github.io/Metal_Gear_Quiz/.
 
 ## Versioning
 
