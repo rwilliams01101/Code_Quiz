@@ -6,6 +6,10 @@ The Metal Gear Solid Quiz is for any MGS enthusiast who wants to test their mett
 
 Run index.html in your browser. See deployment for notes on how to deploy the project on a live system.
 
+
+![Untitled_-Jun-1_-2020-11_02-AM](https://user-images.githubusercontent.com/60494157/83430181-ce820380-a3fa-11ea-914b-146c019ce49b.gif)
+
+
 ## Deployment
 
 Metal Gear Solid Quiz is live at https://rwilliams01101.github.io/Metal_Gear_Quiz/ . 
